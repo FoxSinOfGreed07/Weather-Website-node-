@@ -6,6 +6,8 @@ const chalk = require('chalk');
 
 const app = express();
 
+const port = process.env.PORT || 5050;
+
 // Setup Handlebars engine, set views and partials location
 app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname,'../Templates/views'));
@@ -84,6 +86,6 @@ app.get('*',(req, res) =>{
     })
 })
 
- app.listen(5050,() =>{
-     console.log('Server up on port 5050');
+ app.listen(port,() =>{
+     console.log('Server up on port ' + port);
  });
